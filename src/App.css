@@ -1,0 +1,121 @@
+.app-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+}
+
+/* Header Actions (Settings & Reset Buttons) */
+.header-actions {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: 10;
+}
+
+.action-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: none;
+}
+
+.action-button:hover {
+    background: var(--white);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.action-button:active {
+    transform: scale(0.95);
+}
+
+.settings-btn {
+    color: var(--primary-purple);
+}
+
+.reset-btn {
+    color: var(--primary-pink);
+}
+
+/* Chat Messages Area */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg) 0;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom,
+            rgba(254, 243, 249, 0.3) 0%,
+            rgba(243, 232, 255, 0.3) 100%);
+}
+
+/* Custom scrollbar for chat messages */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(192, 132, 252, 0.3);
+    border-radius: var(--radius-full);
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(192, 132, 252, 0.5);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 768px;
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .header-actions {
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+        gap: var(--spacing-xs);
+    }
+
+    .action-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .action-button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .chat-messages {
+        padding: var(--spacing-md) 0;
+    }
+}
+
+/* Loading animation for smooth transitions */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}

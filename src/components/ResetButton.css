@@ -1,0 +1,38 @@
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    }
+
+    .reset-button {
+        /* .reset-button now inherits common styles from .action-button */
+        /* Specific styles for .reset-button are removed as it's expected to be inside .header-actions */
+        /* position, top, right, z-index are handled by .header-actions */
+    }
+
+    .action-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+
+    .reset-button:hover {
+        transform: rotate(-180deg);
+    }
+
+    @media (max-width: 768px) {
+        .header-actions {
+            top: 15px;
+            right: 15px;
+            gap: 8px;
+        }
+
+        .action-button {
+            width: 35px;
+            height: 35px;
+        }
+    }
