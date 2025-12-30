@@ -106,11 +106,15 @@
 /* Responsive */
 @media (max-width: 480px) {
     .message-input-container {
-        padding: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        bottom: 0;
+        position: sticky;
     }
 
     .input-wrapper {
         padding: var(--spacing-xs) var(--spacing-sm);
+        gap: var(--spacing-xs);
+        min-height: 50px;
     }
 
     .input-icon {
